@@ -35,6 +35,8 @@ function conversacion() {
     per()
   }else if(edith.filter((edith)=>edith==nuevaConversacion.texto).length>0){
     edi()
+}else{
+proximamente()
 }
 }
 
@@ -165,6 +167,21 @@ function edi(){
   <div class="prueba">
     <img src="img/Boot.png" class="boot" alt="">
     <p class="convesacion">Hola Edith, Dice Apolinar que bueno que ya hay una persona de marketing 😃👌 \^o^/</p>
+  </div>
+</div>
+  `;
+  conversacion.innerHTML += elemento;
+}
+function proximamente(){
+  let campoTexto = document.querySelector(".message-input").value;
+  let conversacion = document.querySelector(".chat-window");
+  let conversacionBot = new prueba(campoTexto);
+  let elemento = `
+  <div class="conversacion">
+  <h2 class="preguntas">${conversacionBot.texto}</h2>
+  <div class="prueba">
+    <img src="img/Boot.png" class="boot" alt="">
+    <p class="convesacion">Hola por el momento la persona que me creo no a creado esa opción, si lo mira que esta haciendose wey,mandelo a crear esa opcion lo mas pronto posible </p>
   </div>
 </div>
   `;
