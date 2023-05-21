@@ -1,8 +1,15 @@
-import { saludos, hora,chiste,annette,maydeli,dulce,perla,edith} from "../array/Datos.js";
+import { saludos, hora,chiste,chistes,chisme,chism} from "../array/Datos.js";
 
 let botonEnviar = document.querySelector(".send-button");
 
 botonEnviar.addEventListener("click", nose);
+window.addEventListener('DOMContentLoaded',(event)=>{
+  Swal.fire({
+    title:'Hola soy bottie',
+    text: 'Te mostrare que me puedes preguntar en este momento ,'+'puedes escribirme: chisme o chismesito,chiste,chistes,hola,hora',
+  }
+  )
+})
 
 class prueba {
   constructor(texto) {
@@ -24,18 +31,11 @@ function conversacion() {
   ) {
     horas();
   }else if(chiste.filter((chiste)=>chiste==nuevaConversacion.texto).length>0){
-    chistes()
-  }else if(annette.filter((annette)=>annette==nuevaConversacion.texto).length>0){
-    annett()
-  }else if(maydeli.filter((maydeli)=>maydeli==nuevaConversacion.texto).length>0){
-    May()
-  }else if(dulce.filter((dulce)=>dulce==nuevaConversacion.texto).length>0){
-    dul()
-  }else if(perla.filter((perla)=>perla==nuevaConversacion.texto).length>0){
-    per()
-  }else if(edith.filter((edith)=>edith==nuevaConversacion.texto).length>0){
-    edi()
-}else{
+    chist()
+  }else if(chisme.filter((chisme)=>chisme==nuevaConversacion.texto).length>0){
+    chismu()
+  }
+  else{
 proximamente()
 }
 }
@@ -52,12 +52,18 @@ function dialogoBot() {
   <h2 class="preguntas">${conversacionBot.texto}</h2>
   <div class="prueba">
     <img src="img/Boot.png" class="boot" alt="">
-    <p class="convesacion">Hola, soy ${nombre} un gusto, <br>en que te puedo ayudar ??</p>
+    <div class="chisme">
+    <p clas='descripcion'>Hola, soy ${nombre} un gusto, <br>en que te puedo ayudar ??</p>
+    <div class="container__galeria">
+</div>
+    </div>
   </div>
 </div>
   `;
   conversacion.innerHTML += elementoNombre;
-
+  setTimeout(() => {
+    campoTexto = document.querySelector(".message-input").value=""
+  }, 1000);
 }
 
 function horas() {
@@ -70,108 +76,86 @@ function horas() {
   <h2 class="preguntas">${conversacionBot.texto}</h2>
   <div class="prueba">
     <img src="img/Boot.png" class="boot" alt="">
-    <p class="convesacion">son las ${hora.toLocaleTimeString()}</p>
+    <div class="chisme">
+    <p clas='descripcion'>son las${hora.toLocaleTimeString()}</p>
+    <div class="container__galeria">
+</div>
+    </div>
   </div>
 </div>
 `;
   conversacion.innerHTML += elemento;
+
+  setTimeout(() => {
+    campoTexto = document.querySelector(".message-input").value=""
+  }, 1000);
+
 }
 
-function chistes(){
-  let campoTexto = document.querySelector(".message-input").value;
-  let conversacion = document.querySelector(".chat-window");
-  let conversacionBot = new prueba(campoTexto);
-  let elemento = `
-  <div class="conversacion">
-  <h2 class="preguntas">${conversacionBot.texto}</h2>
-  <div class="prueba">
-    <img src="img/Boot.png" class="boot" alt="">
-    <p class="convesacion">¿Por qué los astronautas no pueden tomar refresco? <br>Porque se les escapa el gas.</p>
-  </div>
-</div>
-  `;
-  conversacion.innerHTML += elemento;
-}
-function annett(){
-  let campoTexto = document.querySelector(".message-input").value;
-  let conversacion = document.querySelector(".chat-window");
-  let conversacionBot = new prueba(campoTexto);
-  let elemento = `
-  <div class="conversacion">
-  <h2 class="preguntas">${conversacionBot.texto}</h2>
-  <div class="prueba">
-    <img src="img/Boot.png" class="boot" alt="">
-    <p class="convesacion">Hola Annette, dice apolinar que no borres las empresas de compaqi,por favor <br> (╯°□°）╯︵ ┻━┻</p>
-  </div>
-</div>
-  `;
-  conversacion.innerHTML += elemento;
-}
 
-function May(){
+function chist(){
   let campoTexto = document.querySelector(".message-input").value;
   let conversacion = document.querySelector(".chat-window");
   let conversacionBot = new prueba(campoTexto);
+  let fraseAleatoria=chistes[Math.floor(Math.random()*chistes.length)]
   let elemento = `
   <div class="conversacion">
   <h2 class="preguntas">${conversacionBot.texto}</h2>
   <div class="prueba">
     <img src="img/Boot.png" class="boot" alt="">
-    <p class="convesacion">Hola Maydeli<br> Dice apolinar que cuides la pila de tu computadora ,por favor <br> (☞ﾟヮﾟ)☞</p>
+    <div class="chisme">
+    <p clas='descripcion'>${fraseAleatoria}</p>
+    <div class="container__galeria">
+</div>
+    </div>
   </div>
 </div>
   `;
   conversacion.innerHTML += elemento;
+  setTimeout(() => {
+    campoTexto = document.querySelector(".message-input").value=""
+  }, 1000);
 }
+  function chismu(){
+    let campoTexto = document.querySelector(".message-input").value;
+    let conversacion = document.querySelector(".chat-window");
+    let conversacionBot = new prueba(campoTexto);
+    let  indice= Math.floor(Math.random()*chism.length)
 
-function dul(){
-  let campoTexto = document.querySelector(".message-input").value;
-  let conversacion = document.querySelector(".chat-window");
-  let conversacionBot = new prueba(campoTexto);
-  let elemento = `
-  <div class="conversacion">
-  <h2 class="preguntas">${conversacionBot.texto}</h2>
-  <div class="prueba">
-    <img src="img/Boot.png" class="boot" alt="">
-    <p class="convesacion">Hola Dulce<br> Dice Apolinar que si le puedes mandar a pedir comida por que otra vez se le olvido traer su fruta </p>
-  </div>
+    let elemento = `
+    <div class="conversacion">
+    <h2 class="preguntas">${conversacionBot.texto}</h2>
+    <div class="prueba">
+      <img src="img/Boot.png" class="boot" alt="">
+      <div class="chisme">
+      <h1 class='titulo'>${chism[indice].titulo}</h1>
+      <p clas='descripcion'>${chism[indice].descripcion}</p>
+      <div class="container__galeria">
+      <img src="${chism[indice].imagen}" class='imagen' alt="imagen">
 </div>
-  `;
-  conversacion.innerHTML += elemento;
-}
-function per(){
-  let campoTexto = document.querySelector(".message-input").value;
-  let conversacion = document.querySelector(".chat-window");
-  let conversacionBot = new prueba(campoTexto);
-  let elemento = `
-  <div class="conversacion">
-  <h2 class="preguntas">${conversacionBot.texto}</h2>
-  <div class="prueba">
-    <img src="img/Boot.png" class="boot" alt="">
-    <p class="convesacion">Oye Oye Oye Oye Oye OyeOye Oye Oye Oye Oye Oye Oye OyeOye Oye Oye Oye Oye Oye Oye Oye Oye Oye Oye Oye Oye Oye Oye Oye Oye Oye Oye OyeOye Oye Oye Oye Oye Oye Oye OyeOye Oye Oye Oye Oye Oye Oye Oye Oye Oye Oye Oye Oye Oye
-    <br>
-    <br>
-    Hola, me caes bien 😃 ༼ つ ◕_◕ ༽つ </p>
+     
+      </div>
+    </div>
   </div>
-</div>
-  `;
-  conversacion.innerHTML += elemento;
-}
-function edi(){
-  let campoTexto = document.querySelector(".message-input").value;
-  let conversacion = document.querySelector(".chat-window");
-  let conversacionBot = new prueba(campoTexto);
-  let elemento = `
-  <div class="conversacion">
-  <h2 class="preguntas">${conversacionBot.texto}</h2>
-  <div class="prueba">
-    <img src="img/Boot.png" class="boot" alt="">
-    <p class="convesacion">Hola Edith, Dice Apolinar que bueno que ya hay una persona de marketing 😃👌 \^o^/</p>
-  </div>
-</div>
-  `;
-  conversacion.innerHTML += elemento;
-}
+    `;
+    conversacion.innerHTML += elemento;
+    setTimeout(() => {
+      campoTexto = document.querySelector(".message-input").value=""
+    }, 1000);
+  }
+  /*
+  function horos(){
+    let campoTexto = document.querySelector(".message-input").value;
+    let conversacion = document.querySelector(".chat-window");
+    let conversacionBot = new prueba(campoTexto);
+    for(horosc of horoscopos){
+      if(campoTexto[horosc].horoscopos==='Aries'){
+        console.log('Hola')
+      }
+    }
+  }
+*/
+
 function proximamente(){
   let campoTexto = document.querySelector(".message-input").value;
   let conversacion = document.querySelector(".chat-window");
@@ -179,14 +163,20 @@ function proximamente(){
   let elemento = `
   <div class="conversacion">
   <h2 class="preguntas">${conversacionBot.texto}</h2>
-  <div class="prueba">
-    <img src="img/Boot.png" class="boot" alt="">
+  <div class="chisme">
+    <img src="img/Boot.png" class="boot" alt="boot">
     <p class="convesacion">Hola por el momento la persona que me creo no a creado esa opción, si lo mira que esta haciendose wey,mandelo a crear esa opcion lo mas pronto posible </p>
   </div>
 </div>
   `;
   conversacion.innerHTML += elemento;
+  setTimeout(() => {
+    campoTexto = document.querySelector(".message-input").value=""
+  }, 1000);
 }
+
+
+
 /*
 function prueba(){
   let textos = new Conversacion(conversacion);
