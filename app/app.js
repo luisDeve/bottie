@@ -161,13 +161,19 @@ function proximamente(){
   let conversacion = document.querySelector(".chat-window");
   let conversacionBot = new prueba(campoTexto);
   let elemento = `
+
   <div class="conversacion">
   <h2 class="preguntas">${conversacionBot.texto}</h2>
-  <div class="chisme">
-    <img src="img/Boot.png" class="boot" alt="boot">
-    <p class="convesacion">Hola por el momento la persona que me creo no a creado esa opción, si lo mira que esta haciendose wey,mandelo a crear esa opcion lo mas pronto posible </p>
+  <div class="prueba">
+    <img src="img/Boot.png" class="boot" alt="">
+    <div class="chisme">
+    <p clas='descripcion'>Hola por el momento la persona que me creo no a creado esa opción, si lo mira que esta haciendose wey,mandelo a crear esa opcion lo mas pronto posible </p>
+    <div class="container__galeria">
+</div>
+    </div>
   </div>
 </div>
+
   `;
   conversacion.innerHTML += elemento;
   setTimeout(() => {
