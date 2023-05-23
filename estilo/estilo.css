@@ -124,7 +124,7 @@ gap: .5rem;
 }
 @media (max-width:720px){
   .chat-window {
-    height: 40rem;
+    height: 33rem;
   }
   .conversacion{
     left: 0rem;

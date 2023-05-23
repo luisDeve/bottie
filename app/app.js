@@ -1,15 +1,23 @@
-import { saludos, hora,chiste,chistes,chisme,chism} from "../array/Datos.js";
+import {
+  saludos,
+  hora,
+  chiste,
+  chistes,
+  chisme,
+  chism,
+} from "../array/Datos.js";
 
 let botonEnviar = document.querySelector(".send-button");
 
 botonEnviar.addEventListener("click", nose);
-window.addEventListener('DOMContentLoaded',(event)=>{
+window.addEventListener("DOMContentLoaded", (event) => {
   Swal.fire({
-    title:'Hola soy bottie',
-    text: 'Te mostrare que me puedes preguntar en este momento ,'+'puedes escribirme: chisme o chismesito,chiste,chistes,hola,hora',
-  }
-  )
-})
+    title: "Hola soy bottie",
+    text:
+      "Te mostrare que me puedes preguntar en este momento ," +
+      "puedes escribirme: chisme o chismesito,chiste,chistes,hola,hora",
+  });
+});
 
 class prueba {
   constructor(texto) {
@@ -30,14 +38,17 @@ function conversacion() {
     hora.filter((hora) => hora === nuevaConversacion.texto).length > 0
   ) {
     horas();
-  }else if(chiste.filter((chiste)=>chiste==nuevaConversacion.texto).length>0){
-    chist()
-  }else if(chisme.filter((chisme)=>chisme==nuevaConversacion.texto).length>0){
-    chismu()
+  } else if (
+    chiste.filter((chiste) => chiste == nuevaConversacion.texto).length > 0
+  ) {
+    chist();
+  } else if (
+    chisme.filter((chisme) => chisme == nuevaConversacion.texto).length > 0
+  ) {
+    chismu();
+  } else {
+    proximamente();
   }
-  else{
-proximamente()
-}
 }
 
 function dialogoBot() {
@@ -62,7 +73,7 @@ function dialogoBot() {
   `;
   conversacion.innerHTML += elementoNombre;
   setTimeout(() => {
-    campoTexto = document.querySelector(".message-input").value=""
+    campoTexto = document.querySelector(".message-input").value = "";
   }, 1000);
 }
 
@@ -87,17 +98,15 @@ function horas() {
   conversacion.innerHTML += elemento;
 
   setTimeout(() => {
-    campoTexto = document.querySelector(".message-input").value=""
+    campoTexto = document.querySelector(".message-input").value = "";
   }, 1000);
-
 }
 
-
-function chist(){
+function chist() {
   let campoTexto = document.querySelector(".message-input").value;
   let conversacion = document.querySelector(".chat-window");
   let conversacionBot = new prueba(campoTexto);
-  let fraseAleatoria=chistes[Math.floor(Math.random()*chistes.length)]
+  let fraseAleatoria = chistes[Math.floor(Math.random() * chistes.length)];
   let elemento = `
   <div class="conversacion">
   <h2 class="preguntas">${conversacionBot.texto}</h2>
@@ -113,16 +122,16 @@ function chist(){
   `;
   conversacion.innerHTML += elemento;
   setTimeout(() => {
-    campoTexto = document.querySelector(".message-input").value=""
+    campoTexto = document.querySelector(".message-input").value = "";
   }, 1000);
 }
-  function chismu(){
-    let campoTexto = document.querySelector(".message-input").value;
-    let conversacion = document.querySelector(".chat-window");
-    let conversacionBot = new prueba(campoTexto);
-    let  indice= Math.floor(Math.random()*chism.length)
+function chismu() {
+  let campoTexto = document.querySelector(".message-input").value;
+  let conversacion = document.querySelector(".chat-window");
+  let conversacionBot = new prueba(campoTexto);
+  let indice = Math.floor(Math.random() * chism.length);
 
-    let elemento = `
+  let elemento = `
     <div class="conversacion">
     <h2 class="preguntas">${conversacionBot.texto}</h2>
     <div class="prueba">
@@ -138,12 +147,12 @@ function chist(){
     </div>
   </div>
     `;
-    conversacion.innerHTML += elemento;
-    setTimeout(() => {
-      campoTexto = document.querySelector(".message-input").value=""
-    }, 1000);
-  }
-  /*
+  conversacion.innerHTML += elemento;
+  setTimeout(() => {
+    campoTexto = document.querySelector(".message-input").value = "";
+  }, 1000);
+}
+/*
   function horos(){
     let campoTexto = document.querySelector(".message-input").value;
     let conversacion = document.querySelector(".chat-window");
@@ -156,7 +165,7 @@ function chist(){
   }
 */
 
-function proximamente(){
+function proximamente() {
   let campoTexto = document.querySelector(".message-input").value;
   let conversacion = document.querySelector(".chat-window");
   let conversacionBot = new prueba(campoTexto);
@@ -177,11 +186,9 @@ function proximamente(){
   `;
   conversacion.innerHTML += elemento;
   setTimeout(() => {
-    campoTexto = document.querySelector(".message-input").value=""
+    campoTexto = document.querySelector(".message-input").value = "";
   }, 1000);
 }
-
-
 
 /*
 function prueba(){
