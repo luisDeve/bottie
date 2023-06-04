@@ -5,6 +5,8 @@ import {
   chistes,
   chisme,
   chism,
+  horoscopos,
+  datosHoroscopos,
 } from "../array/Datos.js";
 
 let botonEnviar = document.querySelector(".send-button");
@@ -15,7 +17,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
     title: "Hola soy bottie",
     text:
       "Te mostrare que me puedes preguntar en este momento ," +
-      "puedes escribirme: chisme o chismesito,chiste,chistes,hola,hora",
+      "puedes escribirme: chisme o chismesito,chiste,chistes,hola,hora,Horoscopos",
   });
 });
 
@@ -46,8 +48,263 @@ function conversacion() {
     chisme.filter((chisme) => chisme == nuevaConversacion.texto).length > 0
   ) {
     chismu();
+  } else if (
+    horoscopos.filter((horoscopos) => horoscopos == nuevaConversacion.texto)
+      .length > 0
+  ) {
+    horoscopo();
   } else {
     proximamente();
+  }
+}
+
+function horoscopo() {
+  let campoTexto = document.querySelector(".message-input").value;
+  let conversacion = document.querySelector(".chat-window");
+  let conversacionBot = new prueba(campoTexto);
+  switch (conversacionBot.texto) {
+    case "Aries":
+    case "Aries ":
+      let elemento = `
+  <div class="conversacion">
+  <h2 class="preguntas">${conversacionBot.texto}</h2>
+  <div class="prueba">
+    <img src="img/Boot.png" class="boot" alt="">
+    <div class="chisme">
+    <p clas='descripcion'>${datosHoroscopos[0].mensaje}</p>
+    <div class="container__galeria">
+</div>
+    </div>
+  </div>
+</div>
+  `;
+      conversacion.innerHTML += elemento;
+      limpiarInput();
+      break;
+    case "Tauros":
+    case "Tauros ":
+      let elementoTauro = `
+  <div class="conversacion">
+  <h2 class="preguntas">${conversacionBot.texto}</h2>
+  <div class="prueba">
+    <img src="img/Boot.png" class="boot" alt="">
+    <div class="chisme">
+    <p clas='descripcion'>${datosHoroscopos[1].mensaje}</p>
+    <div class="container__galeria">
+</div>
+    </div>
+  </div>
+</div>
+  `;
+      conversacion.innerHTML += elementoTauro;
+      break;
+
+    case "Cancer":
+    case "Cancer ":
+      let elementoCancer = `
+  <div class="conversacion">
+  <h2 class="preguntas">${conversacionBot.texto}</h2>
+  <div class="prueba">
+    <img src="img/Boot.png" class="boot" alt="">
+    <div class="chisme">
+    <p clas='descripcion'>${datosHoroscopos[3].mensaje}</p>
+    <div class="container__galeria">
+</div>
+    </div>
+  </div>
+</div>
+  `;
+      conversacion.innerHTML += elementoCancer;
+      limpiarInput();
+      break;
+    case "Libra":
+    case "Libra ":
+      let elementoLibra = `
+  <div class="conversacion">
+  <h2 class="preguntas">${conversacionBot.texto}</h2>
+  <div class="prueba">
+    <img src="img/Boot.png" class="boot" alt="">
+    <div class="chisme">
+    <p clas='descripcion'>${datosHoroscopos[6].mensaje}</p>
+    <div class="container__galeria">
+</div>
+    </div>
+  </div>
+</div>
+  `;
+      conversacion.innerHTML += elementoLibra;
+      limpiarInput();
+      break;
+
+    case "Géminis":
+    case "Géminis ":
+      let elementoGeminis = `
+      <div class="conversacion">
+      <h2 class="preguntas">${conversacionBot.texto}</h2>
+      <div class="prueba">
+        <img src="img/Boot.png" class="boot" alt="">
+        <div class="chisme">
+        <p clas='descripcion'>${datosHoroscopos[2].mensaje}</p>
+        <div class="container__galeria">
+    </div>
+        </div>
+      </div>
+    </div>
+      `;
+      conversacion.innerHTML += elementoGeminis;
+      limpiarInput();
+      break;
+
+    case "Leo":
+    case "Leo ":
+      let elementoLeo = `
+          <div class="conversacion">
+          <h2 class="preguntas">${conversacionBot.texto}</h2>
+          <div class="prueba">
+            <img src="img/Boot.png" class="boot" alt="">
+            <div class="chisme">
+            <p clas='descripcion'>${datosHoroscopos[4].mensaje}</p>
+            <div class="container__galeria">
+        </div>
+            </div>
+          </div>
+        </div>
+          `;
+      conversacion.innerHTML += elementoLeo;
+      limpiarInput();
+      break;
+
+    case "Virgo":
+    case "Virgo ":
+      let elementovirgo = `
+              <div class="conversacion">
+              <h2 class="preguntas">${conversacionBot.texto}</h2>
+              <div class="prueba">
+                <img src="img/Boot.png" class="boot" alt="">
+                <div class="chisme">
+                <p clas='descripcion'>${datosHoroscopos[5].mensaje}</p>
+                <div class="container__galeria">
+            </div>
+                </div>
+              </div>
+            </div>
+              `;
+      conversacion.innerHTML += elementovirgo;
+      limpiarInput();
+      break;
+
+    case "Escorpio":
+    case "Escorpio ":
+      let elementoescorpio = `
+                  <div class="conversacion">
+                  <h2 class="preguntas">${conversacionBot.texto}</h2>
+                  <div class="prueba">
+                    <img src="img/Boot.png" class="boot" alt="">
+                    <div class="chisme">
+                    <p clas='descripcion'>${datosHoroscopos[7].mensaje}</p>
+                    <div class="container__galeria">
+                </div>
+                    </div>
+                  </div>
+                </div>
+                  `;
+      conversacion.innerHTML += elementoescorpio;
+      limpiarInput();
+      break;
+
+    case "Sagitario":
+    case "Sagitario ":
+      let elementoSagitorio = `
+                      <div class="conversacion">
+                      <h2 class="preguntas">${conversacionBot.texto}</h2>
+                      <div class="prueba">
+                        <img src="img/Boot.png" class="boot" alt="">
+                        <div class="chisme">
+                        <p clas='descripcion'>${datosHoroscopos[8].mensaje}</p>
+                        <div class="container__galeria">
+                    </div>
+                        </div>
+                      </div>
+                    </div>
+                      `;
+      conversacion.innerHTML += elementoSagitorio;
+      limpiarInput();
+      break;
+
+    case "Capricornio":
+    case "Capricornio ":
+      let elementoCapricornio = `
+                          <div class="conversacion">
+                          <h2 class="preguntas">${conversacionBot.texto}</h2>
+                          <div class="prueba">
+                            <img src="img/Boot.png" class="boot" alt="">
+                            <div class="chisme">
+                            <p clas='descripcion'>${datosHoroscopos[9].mensaje}</p>
+                            <div class="container__galeria">
+                        </div>
+                            </div>
+                          </div>
+                        </div>
+                          `;
+      conversacion.innerHTML += elementoCapricornio;
+      limpiarInput();
+      break;
+
+    case "Acuario":
+    case "Acuario ":
+      let elementoAcuario = `
+                              <div class="conversacion">
+                              <h2 class="preguntas">${conversacionBot.texto}</h2>
+                              <div class="prueba">
+                                <img src="img/Boot.png" class="boot" alt="">
+                                <div class="chisme">
+                                <p clas='descripcion'>${datosHoroscopos[10].mensaje}</p>
+                                <div class="container__galeria">
+                            </div>
+                                </div>
+                              </div>
+                            </div>
+                              `;
+      conversacion.innerHTML += elementoAcuario;
+      limpiarInput();
+      break;
+
+    case "Piscis":
+    case "Piscis ":
+      let elementoPiscis = `
+                                  <div class="conversacion">
+                                  <h2 class="preguntas">${conversacionBot.texto}</h2>
+                                  <div class="prueba">
+                                    <img src="img/Boot.png" class="boot" alt="">
+                                    <div class="chisme">
+                                    <p clas='descripcion'>${datosHoroscopos[11].mensaje}</p>
+                                    <div class="container__galeria">
+                                </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                  `;
+      conversacion.innerHTML += elementoPiscis;
+      limpiarInput();
+      break;
+
+    default:
+      let elementoSinopcion = `
+      <div class="conversacion">
+      <h2 class="preguntas">${conversacionBot.texto}</h2>
+      <div class="prueba">
+        <img src="img/Boot.png" class="boot" alt="">
+        <div class="chisme">
+        <p clas='descripcion'>Por el momento esta opcion no se encuentra, por favor vulva a intentarlo</p>
+        <div class="container__galeria">
+    </div>
+        </div>
+      </div>
+    </div>
+      `;
+      conversacion.innerHTML += elementoSinopcion;
+      limpiarInput();
+      break;
   }
 }
 
@@ -72,9 +329,7 @@ function dialogoBot() {
 </div>
   `;
   conversacion.innerHTML += elementoNombre;
-  setTimeout(() => {
-    campoTexto = document.querySelector(".message-input").value = "";
-  }, 1000);
+  limpiarInput();
 }
 
 function horas() {
@@ -97,9 +352,7 @@ function horas() {
 `;
   conversacion.innerHTML += elemento;
 
-  setTimeout(() => {
-    campoTexto = document.querySelector(".message-input").value = "";
-  }, 1000);
+  limpiarInput();
 }
 
 function chist() {
@@ -121,9 +374,7 @@ function chist() {
 </div>
   `;
   conversacion.innerHTML += elemento;
-  setTimeout(() => {
-    campoTexto = document.querySelector(".message-input").value = "";
-  }, 1000);
+  limpiarInput();
 }
 function chismu() {
   let campoTexto = document.querySelector(".message-input").value;
@@ -148,22 +399,8 @@ function chismu() {
   </div>
     `;
   conversacion.innerHTML += elemento;
-  setTimeout(() => {
-    campoTexto = document.querySelector(".message-input").value = "";
-  }, 1000);
+  limpiarInput();
 }
-/*
-  function horos(){
-    let campoTexto = document.querySelector(".message-input").value;
-    let conversacion = document.querySelector(".chat-window");
-    let conversacionBot = new prueba(campoTexto);
-    for(horosc of horoscopos){
-      if(campoTexto[horosc].horoscopos==='Aries'){
-        console.log('Hola')
-      }
-    }
-  }
-*/
 
 function proximamente() {
   let campoTexto = document.querySelector(".message-input").value;
@@ -176,7 +413,7 @@ function proximamente() {
   <div class="prueba">
     <img src="img/Boot.png" class="boot" alt="">
     <div class="chisme">
-    <p clas='descripcion'>Hola por el momento la persona que me creo no a creado esa opción, si lo mira que esta haciendose wey,mandelo a crear esa opcion lo mas pronto posible </p>
+    <p clas='descripcion'>Por el momento esta opcion no se encuentra, por favor vulva a intentarlo</p>
     <div class="container__galeria">
 </div>
     </div>
@@ -185,183 +422,12 @@ function proximamente() {
 
   `;
   conversacion.innerHTML += elemento;
+  limpiarInput();
+}
+
+function limpiarInput() {
   setTimeout(() => {
-    campoTexto = document.querySelector(".message-input").value = "";
+    
+  let  campoTexto = document.querySelector(".message-input").value = "";
   }, 1000);
 }
-
-/*
-function prueba(){
-  let textos = new Conversacion(conversacion);
-  conversacion=document.querySelector('.texto').value
-  console.log(conversacion)
-}
-*/
-
-/*
-
-function conversacionBoot() {
-  let textos = texto.value;
-  prueba(textos);
-}
-function prueba(conversacionBot) {
-  if (saludos.filter((saludos) => saludos === conversacionBot).length > 0) {
-    let nombre = "Bottie";
-    let elemento = `
-    <div class="contenedorPregunta">
-    <p class="bot">${conversacionBot}</p>
-  </div>
-  <div class="respuestabot">
-    <p class="bot">Hola, soy ${nombre} un gusto</p>
-    <p class="bot">en que te puedo ayudar ??</p>
-  </div>
-  `;
-    conversacion.innerHTML += elemento;
-  } else if (hora.filter((hora) => hora == conversacionBot).length > 0) {
-    let horas = new Hora();
-    let minutos = new Hora();
-    let segundos = new Hora();
-    let elemento = `
-    <div class="contenedorPregunta">
-    <p class="bot">${conversacionBot}</p>
-  </div>
-  <div class="respuestabot">
-    <p class="bot">Son las ${horas.horas}:${minutos.minutos}:${segundos.segundos}</p>
-  </div>
-  `;
-    conversacion.innerHTML += elemento;
-  } else if (fecha.filter((fecha) => fecha == conversacionBot).length > 0) {
-    let hoy = new Mes();
-    let elemento = `
-    <div class="contenedorPregunta">
-    <p class="bot">${conversacionBot}</p>
-  </div>
-  <div class="respuestabot">
-    <p class="bot">Hoy es ${hoy.diaCompleto.toDateString()}</p>
-  </div>
-  `;
-    conversacion.innerHTML += elemento;
-  }
-}
-
-/*
-  else if (horayFecha.indexOf(conversacionBot)) {
-    let now= new Date()
-    let elemento = `
-    <div class="contenedorPregunta">
-    <p class="bot">${textos}</p>
-  </div>
-  <div class="respuestabot">
-  <span class="bot">${now}</span>
-</div>
-  `;
-  conversacion.innerHTML += elemento;
-
-  }
-}
-
-
- let pruebaFilter = saludos.filter((saludos) => saludos === conversacionBot);
-  let nombre = "Bottie";
-  let elemento = `
-  <div class="contenedorPregunta">
-  <p class="bot">${pruebaFilter}</p>
-</div>
-<div class="respuestabot">
-  <p class="bot">Hola, soy ${nombre} un gusto</p>
-  <p class="bot">en que te puedo ayudar ??</p>
-</div>
-`;
-conversacion.innerHTML += elemento;
-*/
-
-/*
-function saludo() {
-  const miRespuesta= setTimeout(nose,100)
-  const respuestaBoot= setTimeout(nose2,1000)
-}
-function nose(text){
-    let elemento = `
-    <div class="contenedorPregunta">
-    <p class="bot">${textos}</p>
-  </div>`
-  conversacion.innerHTML += elemento;
-  
-}
-
-function nose2(){
-    let nombre = "Bottie";
-    let elemento = `
-    <div class="respuestabot">
-    <p class="bot">Hola, soy ${nombre} un gusto</p>
-    <p class="bot">en que te puedo ayudar ??</p>
-  </div>
- `;
-  conversacion.innerHTML += elemento;
-
-}
-
-
-/*
-let datos = [];
-function datosBoot(){
-
-datos.push(conversacion);
-if (datos.includes("Hola")) {
-  console.log("fffff");
-}
-
-}
-*/
-
-/*
-
-function boot(preguntaBot) {
-
-  let preguntaBot = texto.value;
-  let ConversionPregunta = preguntaBot.toLowerCase();
-  if (ConversionPregunta == "hola") {
-    let elemento = `
-     <div class="respuesta">
-<p class="bot">${preguntaBot}</p>
- </div>
- `;
-    conversacion.innerHTML += elemento;
-    setTimeout(() => {
-      preguntaBot = texto.value = "";
-    }, 500);
-    setTimeout(() => {
-      respuestaHola();
-    }, 1000);
-  }
-  if (ConversionPregunta == "como estas") {
-    let elemento = `
-     <div class="respuesta">
-<p class="bot">${preguntaBot}</p>
- </div>
- `;
-    conversacion.innerHTML += elemento;
-    setTimeout(() => {
-      preguntaBot = texto.value = "";
-    }, 500);
-    setTimeout(() => {
-      respuestaComoEstas();
-    }, 1000);
-  }
-}
-
-function respuestaHola() {
-  let elemento = `
-     <div class="conversacion">
-     <p class="respuestayo">Hola, mucho gusto</p>
-     </div>`;
-  conversacion.innerHTML += elemento;
-}
-function respuestaComoEstas() {
-  let elemento = `
-     <div class="conversacion">
-     <p class="respuestayo">Bien y tu ??</p>
-     </div>`;
-  conversacion.innerHTML += elemento;
-}
-*/
